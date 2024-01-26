@@ -4,8 +4,12 @@ import { useAuth } from "../../context/auth";
 import toast from "react-hot-toast";
 import SearchInput from "../Form/SearchInput";
 import useCategory from "../../hooks/useCategory";
+import { useCart } from "../../context/cart";
+import { Badge } from "antd";
+
 const Header = () => {
   const [auth, setAuth] = useAuth();
+  const [cart] = useCart();
   const categories = useCategory();
   const handleLogout = () => {
     setAuth({
@@ -42,13 +46,12 @@ const Header = () => {
                   Home
                 </NavLink>
               </li>
-<<<<<<< HEAD
+
               <li className="nav-item">
                 <NavLink to="/category" className="nav-link ">
                   Category
                 </NavLink>
               </li>
-=======
               <li className="nav-item dropdown">
                 <Link
                   className="nav-link dropdown-toggle"
@@ -75,8 +78,6 @@ const Header = () => {
                   ))}
                 </ul>
               </li>
-
->>>>>>> origin/12-search-cat-similar-filter-vid-22-23
               {!auth?.user ? (
                 <>
                   <li className="nav-item">
@@ -98,20 +99,15 @@ const Header = () => {
                       href="#"
                       role="button"
                       data-bs-toggle="dropdown"
-<<<<<<< HEAD
-                      aria-expanded="false"
-=======
                       style={{ border: "none" }}
->>>>>>> origin/12-search-cat-similar-filter-vid-22-23
                     >
                       {auth?.user?.name}
                     </NavLink>
                     <ul className="dropdown-menu">
                       <li>
                         <NavLink
-                          to={`/dashboard/${
-                            auth?.user?.role === 1 ? "admin" : "user"
-                          }`}
+                          to={`/dashboard/${auth?.user?.role === 1 ? "admin" : "user"
+                            }`}
                           className="dropdown-item"
                         >
                           Dashboard
@@ -131,9 +127,11 @@ const Header = () => {
                 </>
               )}
               <li className="nav-item">
-                <NavLink to="/cart" className="nav-link">
-                  Cart (0)
-                </NavLink>
+                <Badge count={cart?.length} showZero>
+                  <NavLink to="/cart" className="nav-link">
+                    Cart
+                  </NavLink>
+                </Badge>
               </li>
             </ul>
           </div>
