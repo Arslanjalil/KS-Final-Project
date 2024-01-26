@@ -78,12 +78,12 @@ const Login = () => {
             </button>
           </div>
 
-  <button type="submit" className="btn btn-primary">
-    LOGIN
-  </button>
-        </form >
-      </div >
-    </Layout >
+          <button type="submit" className="btn btn-primary">
+            LOGIN
+          </button>
+        </form>
+      </div>
+    </Layout>
   );
 };
 
