@@ -16,11 +16,8 @@ import CreateProduct from "./pages/Admin/CreateProduct";
 import Users from "./pages/Admin/Users";
 import Orders from "./pages/user/Orders";
 import Profile from "./pages/user/Profile";
-<<<<<<< HEAD
-=======
 import Products from "./pages/Admin/Products";
 import UpdateProduct from "./pages/Admin/UpdateProduct";
->>>>>>> origin/10-Update-Delete-Product-vid-20
 function App() {
   return (
     <>
